@@ -1,0 +1,7 @@
+{
+  "localePaths": [
+    "src/lib/locales/"
+  ],
+  "sourceLocale": "en",
+  "keyStyle": "nested"
+}

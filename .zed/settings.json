@@ -1,0 +1,8 @@
+{
+  "file_scan_exclusions": [
+    "node_modules",
+    ".svelte-kit",
+    ".vscode",
+    ".wrangler",
+  ]
+}
