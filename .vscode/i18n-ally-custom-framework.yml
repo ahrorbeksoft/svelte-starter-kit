@@ -1,0 +1,13 @@
+# .vscode/i18n-ally-custom-framework.yml
+languageIds:
+  - svelte
+  - javascript
+  - typescript
+
+usageMatchRegex:
+  # This regex looks for t("key"), t('key'), or t(`key`)
+  # It ensures there isn't a word character before 't' (to avoid matching 'concat("..")')
+  - "[^\\w\\d]t\\(['\"`]({key})['\"`]"
+
+# Setting monopoly to true forces i18n-ally to use ONLY this config
+monopoly: true

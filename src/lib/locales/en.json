@@ -1,0 +1,28 @@
+{
+  "loading-dot": "Loading...",
+  "render-month": "{month, select, 1 {January} 2 {February} 3 {March} 4 {April} 5 {May} 6 {June} 7 {July} 8 {August} 9 {September} 10 {October} 11 {November} 12 {December} other {Unknown}}",
+  "day": "Day",
+  "month": "Month",
+  "year": "Year",
+  "select-date": "Select date",
+  "click-to-upload": "Click to upload",
+  "select-options": "Select options",
+  "search-options": "Search options...",
+  "no-options-left": "No options found!",
+  "items-selected": "{count, plural, =0 {No items selected} one {# item selected} other {# items selected}}",
+  "clear": "Clear",
+  "select-option": "Select option",
+  "textarea-counter": "{count}/{max} characters",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "just-now": "Just now",
+  "minutes-ago": "{minutes, plural, =1 {# minute} other {# minutes}} ago",
+  "today-at": "Today at {time}",
+  "yesterday-at": "Yesterday at {time}",
+  "input": {
+    "max": "{name} must not be more than {max} characters!",
+    "min": "{name} must not be less than {min, plural, =1 {one character} other {# characters}}",
+    "invalid": "{name} is invalid!",
+    "required": "{name} is required!"
+  }
+}

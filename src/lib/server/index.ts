@@ -1,0 +1,1 @@
+export { adminDB } from "./db";

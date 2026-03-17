@@ -17,5 +17,12 @@
 		"components.json": true,
 		".npmrc": true,
 		"bun.lockb": true,
-	}
+	},
+	"i18n-ally.localesPaths": [
+		"src/lib/locales"
+	],
+	"i18n-ally.enabledFrameworks": [
+		"custom"
+	],
+	"i18n-ally.keystyle": "nested"
 }

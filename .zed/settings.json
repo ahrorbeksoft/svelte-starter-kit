@@ -4,5 +4,11 @@
     ".svelte-kit",
     ".vscode",
     ".wrangler",
+    ".git",
+    ".*prettier*",
+    "skills-lock.json",
+    "components.json",
+    "bun.lockb",
+    ".npmrc"
   ]
 }
