@@ -51,6 +51,11 @@
   });
 </script>
 
+<svelte:head>
+  <title>Todo Demo</title>
+  <meta name="description" content="Todo demo with CRUD operations." />
+</svelte:head>
+
 {#if !auth.user}
   <Login />
 {:else}
