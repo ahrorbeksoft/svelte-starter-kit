@@ -4,6 +4,7 @@ import type { User } from "./types";
 
 export const authStorageKey = `instant_user_${PUBLIC_INSTANT_APP_ID}`;
 // auth.svelte.ts
+//
 class Auth {
   #init_user = $state<User | undefined>(undefined);
   #user = $state<User | undefined>(undefined);
@@ -24,6 +25,7 @@ class Auth {
           const currentUser = $state.snapshot(this.#user);
           const initialUser = $state.snapshot(this.#init_user);
           if (JSON.stringify(currentUser) !== JSON.stringify(initialUser)) {
+            console.log("Syncing user:", currentUser);
             // 2. Fire and forget, but handle the baseline update internally
             this.performSync(currentUser);
           }

@@ -1,1 +1,28 @@
-{}
+{
+  "loading-dot": "Yuklanmoqda...",
+  "render-month": "{month, select, 1 {Yanvar} 2 {Fevral} 3 {Mart} 4 {Aprel} 5 {May} 6 {Iyun} 7 {Iyul} 8 {Avgust} 9 {Sentabr} 10 {Oktabr} 11 {Noyabr} 12 {Dekabr} other {Noma'lum}}",
+  "day": "Kun",
+  "month": "Oy",
+  "year": "Yil",
+  "select-date": "Sanani tanlang",
+  "click-to-upload": "Yuklash uchun bosing",
+  "select-options": "Variantlarni tanlang",
+  "search-options": "Variantlarni qidirish...",
+  "no-options-left": "Hech qanday variant topilmadi!",
+  "items-selected": "{count, plural, =0 {Hech narsa tanlanmagan} one {# ta element tanlandi} other {# ta element tanlandi}}",
+  "clear": "Tozalash",
+  "select-option": "Variantni tanlang",
+  "textarea-counter": "{count}/{max} ta belgi",
+  "cancel": "Bekor qilish",
+  "confirm": "Tasdiqlash",
+  "just-now": "Hozirgina",
+  "minutes-ago": "{minutes, plural, =1 {# daqiqa} other {# daqiqa}} oldin",
+  "today-at": "Bugun soat {time}",
+  "yesterday-at": "Kecha soat {time}",
+  "input": {
+    "max": "{name} {max} ta belgidan ko'p bo'lmasligi kerak!",
+    "min": "{name} kamida {min, plural, =1 {1 ta belgi} other {# ta belgi}} bo'lishi kerak",
+    "invalid": "{name} noto'g'ri!",
+    "required": "{name} majburiy!"
+  }
+}

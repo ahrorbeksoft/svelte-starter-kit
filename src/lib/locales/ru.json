@@ -1,1 +1,28 @@
-{}
+{
+  "loading-dot": "Загрузка...",
+  "render-month": "{month, select, 1 {Январь} 2 {Февраль} 3 {Март} 4 {Апрель} 5 {Май} 6 {Июнь} 7 {Июль} 8 {Август} 9 {Сентябрь} 10 {Октябрь} 11 {Ноябрь} 12 {Декабрь} other {Неизвестно}}",
+  "day": "День",
+  "month": "Месяц",
+  "year": "Год",
+  "select-date": "Выберите дату",
+  "click-to-upload": "Нажмите для загрузки",
+  "select-options": "Выберите варианты",
+  "search-options": "Поиск вариантов...",
+  "no-options-left": "Варианты не найдены!",
+  "items-selected": "{count, plural, =0 {Ничего не выбрано} one {Выбран # элемент} few {Выбрано # элемента} many {Выбрано # элементов} other {Выбрано # элемента}}",
+  "clear": "Очистить",
+  "select-option": "Выберите вариант",
+  "textarea-counter": "{count}/{max} символов",
+  "cancel": "Отмена",
+  "confirm": "Подтвердить",
+  "just-now": "Только что",
+  "minutes-ago": "{minutes, plural, one {# минуту} few {# минуты} many {# минут} other {# минуты}} назад",
+  "today-at": "Сегодня в {time}",
+  "yesterday-at": "Вчера в {time}",
+  "input": {
+    "max": "{name} не должно быть длиннее {max} символов!",
+    "min": "{name} не должно быть короче {min, plural, =1 {1 символа} few {# символов} many {# символов} other {# символа}}",
+    "invalid": "{name} недействительно!",
+    "required": "{name} обязательно!"
+  }
+}

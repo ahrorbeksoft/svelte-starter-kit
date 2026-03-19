@@ -64,7 +64,7 @@ const unwrap = <T>(val: T | (() => T)): T => (typeof val === "function" ? (val a
 
 // NEVER SPREAD THE OUTPUT OF THIS FUNCTION, IT JUST LOOSES IT'S REACTIVITY IF YOU DO SO
 export function useQuery<T extends InstaQLParams<AppSchema>>(
-  queryInput: T | (() => T),
+  queryInput: T | null | (() => T | null),
   initialData?: any | (() => any)
 ) {
   const state = $state<QueryState<T>>({
@@ -74,6 +74,8 @@ export function useQuery<T extends InstaQLParams<AppSchema>>(
 
   $effect(() => {
     const query = unwrap(queryInput);
+
+    if (!query) return;
 
     // @ts-expect-error fuck you
     const unsubscribe = db.core.subscribeQuery(query, (resp) => {

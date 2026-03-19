@@ -48,7 +48,7 @@
       getInitialValueAsync &&
       field.form.options.defaultValues[field.name] === field.state.value
     ) {
-      action.execute();
+      action.run();
     }
   });
 </script>

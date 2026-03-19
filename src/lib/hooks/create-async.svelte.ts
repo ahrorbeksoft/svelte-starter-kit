@@ -9,13 +9,13 @@ type TryCatchReturn =
 
 const GLOBAL_KEY = "__global__";
 
-export function createAsync<T extends (...args: any[]) => Promise<TryCatchReturn | void>>(
+export function createAsync<T extends (...args: any[]) => Promise<TryCatchReturn> | Promise<void>>(
   asyncFn: T
 ) {
   const loadingStates = $state(new SvelteMap<string, boolean>());
   let error = $state<Error | null>(null);
 
-  async function run(id: string, args: Parameters<T>) {
+  async function execute(id: string, args: Parameters<T>) {
     try {
       loadingStates.set(id, true);
       error = null;
@@ -48,43 +48,22 @@ export function createAsync<T extends (...args: any[]) => Promise<TryCatchReturn
 
   /**
    * Execute using the global loading key.
-   *
-   * Backward compatibility:
-   * If the first argument is a string, we also mirror loading state to that key.
-   * Prefer `executeWithKey` for new code.
    */
-  async function execute(...args: Parameters<T>) {
-    const legacyKey = typeof args[0] === "string" ? args[0] : null;
-
-    if (legacyKey && import.meta.env.DEV) {
-      console.warn(
-        "[createAsync] Passing a string as the first argument implicitly uses it as a loading key. Prefer executeWithKey(key, ...args)."
-      );
-    }
-
-    if (!legacyKey) {
-      return run(GLOBAL_KEY, args);
-    }
-
-    try {
-      loadingStates.set(legacyKey, true);
-      return await run(GLOBAL_KEY, args);
-    } finally {
-      loadingStates.set(legacyKey, false);
-    }
+  async function run(...args: Parameters<T>) {
+    return execute(GLOBAL_KEY, args);
   }
 
   /**
    * Execute using an explicit loading key.
    */
-  async function executeWithKey(key: string, ...args: Parameters<T>) {
+  async function runWithKey(key: string, ...args: Parameters<T>) {
     if (!key) {
-      return run(GLOBAL_KEY, args);
+      return execute(GLOBAL_KEY, args);
     }
 
     try {
       loadingStates.set(key, true);
-      return await run(GLOBAL_KEY, args);
+      return await execute(GLOBAL_KEY, args);
     } finally {
       loadingStates.set(key, false);
     }
@@ -101,7 +80,7 @@ export function createAsync<T extends (...args: any[]) => Promise<TryCatchReturn
     get error() {
       return error;
     },
-    execute,
-    executeWithKey
+    run,
+    runWithKey
   };
 }

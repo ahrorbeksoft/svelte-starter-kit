@@ -24,5 +24,15 @@
     "min": "{name} must not be less than {min, plural, =1 {one character} other {# characters}}",
     "invalid": "{name} is invalid!",
     "required": "{name} is required!"
+  },
+  "toast": {
+    "edit-successfull-singular": "{name} is edited successfully!",
+    "edit-successfull-plural": "{name} are edited successfully!",
+    "add-successfull-singular": "{name} is added successfully!",
+    "add-successfull-plural": "{name} are added successfully!",
+    "delete-successfull-singular": "{name} is deleted successfully!",
+    "delete-successfull-plural": "{name} are deleted successfully!",
+    "save-successfull-singular": "{name} is saved successfully!",
+    "save-successfull-plural": "{name} are saved successfully!"
   }
 }

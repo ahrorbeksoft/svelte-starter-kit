@@ -8,12 +8,7 @@
 
 <div>
   <ScrollArea.Root class="h-screen w-screen overflow-hidden">
-    <Navbar
-      menuLinks={[
-        { href: route("/demo/db"), label: "DB" },
-        { href: route("/demo/form"), label: "Form" }
-      ]}
-    />
+    <Navbar menuLinks={[{ href: route("/demo/form"), label: "Form" }]} />
     <div>
       {@render children()}
     </div>

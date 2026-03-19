@@ -18,6 +18,12 @@ const _schema = i.schema({
       email: i.string().unique().indexed().optional(),
       imageURL: i.string().optional(),
       type: i.string().optional()
+    }),
+    todos: i.entity({
+      title: i.string(),
+      completed: i.boolean(),
+      createdAt: i.date().indexed(),
+      updatedAt: i.date().indexed()
     })
   },
   links: {
@@ -45,6 +51,20 @@ const _schema = i.schema({
         on: "$users",
         has: "many",
         label: "linkedGuestUsers"
+      }
+    },
+    $usersTodos: {
+      forward: {
+        on: "todos",
+        has: "one",
+        label: "owner",
+        required: true,
+        onDelete: "cascade"
+      },
+      reverse: {
+        on: "$users",
+        has: "many",
+        label: "todos"
       }
     }
   },
