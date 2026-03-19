@@ -11,3 +11,9 @@ It includes:
 - LLM/project rules for consistent development
 
 I use this as my base when starting new projects, and others are welcome to use it too.
+
+# Getting Started
+
+```bash
+bunx gitpick ahrorbeksoft/svelte-starter-kit my-app
+```
