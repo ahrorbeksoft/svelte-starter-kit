@@ -51,6 +51,7 @@ Put these in `src/routes/<route>/_components` when they are specific to that rou
 - large visual sections
 - cards, tables, charts, filters, toolbars
 - dialogs, sheets, and modal forms
+- each route-local modal, dialog, or sheet should live in its own component file
 - empty states and loading states
 - row/action menus
 - route-specific form components
@@ -94,6 +95,8 @@ As a default:
 
 - one logical section -> one component
 - one modal/sheet/dialog -> one component
+- never combine multiple route-specific modals or sheets into a single component file
+- each named modal flow should have its own route-local component such as `create-dialog.svelte`, `edit-sheet.svelte`, or `details-dialog.svelte`
 - one table/list implementation -> one component
 - one filter bar / toolbar -> one component
 - one complex form -> one component
@@ -189,7 +192,8 @@ When generating or refactoring a page:
 3. move named sections into small route-local components
 4. keep `+page.svelte` as the composition layer
 5. keep route-specific helpers close to the route
-6. only use `$lib/components` for truly shared building blocks
+6. give each modal, dialog, or sheet its own route-local component file
+7. only use `$lib/components` for truly shared building blocks
 
 This should be the default behavior, not an exception.
 

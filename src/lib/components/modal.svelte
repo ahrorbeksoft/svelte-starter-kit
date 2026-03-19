@@ -75,14 +75,15 @@
               {title}
             </Sheet.Title>
           {/if}
-          {#if description}
-            <Sheet.Description>
-              {description}
-            </Sheet.Description>
-          {/if}
         </Sheet.Header>
       {/if}
       <ScrollArea.Root class="h-[calc(100vh-62px)]">
+        {#if description}
+          <Sheet.Description class="px-4 pb-4">
+            {description}
+          </Sheet.Description>
+        {/if}
+
         <div class="px-4 pb-4">
           {@render children()}
         </div>

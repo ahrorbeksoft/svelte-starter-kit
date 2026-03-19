@@ -1,1 +1,5 @@
-<!--project structure here-->
+---
+trigger: always_on
+---
+
+# Project Structure
