@@ -94,6 +94,7 @@
                 {/snippet}
               </form.Field>
               <SubmitButton {form} label="Verify code" loadingLabel="Verifying..." />
+              <Button variant="ghost" onclick={() => form.reset()}>Change email</Button>
             {:else}
               <p class="text-sm text-muted-foreground">
                 Enter your email and we will send you a one-time verification code.
@@ -113,7 +114,6 @@
                   Send code
                 {/if}
               </Button>
-              <Button variant="ghost" onclick={() => form.reset()}>Change email</Button>
             {/if}
           {/snippet}
         </form.Subscribe>
