@@ -51,7 +51,7 @@
   });
 </script>
 
-{#if !auth.user || true}
+{#if !auth.user}
   <Login />
 {:else}
   <div class="mx-auto max-w-2xl p-5">
