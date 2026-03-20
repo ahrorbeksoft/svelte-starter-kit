@@ -4,6 +4,7 @@
   import FieldContainer from "./field-container.svelte";
   import Dropzone, { type DropzoneEvent, type CustomDropzoneProps } from "svelte-dropzone-runes";
   import { i18n } from "$lib";
+  import { getTranslations } from "@sveltebase/i18n";
 
   type ImageFieldProps = {
     label?: string;
@@ -31,7 +32,7 @@
     onDelete
   }: ImageFieldProps = $props();
 
-  const { t } = $derived(i18n);
+  const t = getTranslations();
 
   let selectedFile = $state<File | null>(null);
   let previewUrl = $state<string | null>(null);

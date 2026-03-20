@@ -8,10 +8,10 @@
   import { type Snippet } from "svelte";
   import type { AnyFieldApi } from "@tanstack/svelte-form";
   import { SvelteSet } from "svelte/reactivity";
-  import { i18n } from "$lib";
   import FieldContainer from "./field-container.svelte";
   import type { RenderSnippetConfig } from "../render.svelte";
   import Render from "../render.svelte";
+  import { getTranslations } from "@sveltebase/i18n";
 
   type Option<T> = {
     value: string;
@@ -60,7 +60,7 @@
   // Derived values for validation and selection
   const selectedValues = $derived(new Set(field.state.value as string[]));
 
-  const { t } = $derived(i18n);
+  const t = getTranslations();
   const resolvedPlaceholder = $derived(placeholder ?? t("select-options"));
   const resolvedSearchText = $derived(searchText ?? t("search-options"));
   const resolvedEmptyText = $derived(emptyText ?? t("no-options-left"));

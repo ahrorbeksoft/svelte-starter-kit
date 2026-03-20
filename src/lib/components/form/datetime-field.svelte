@@ -13,10 +13,9 @@
   } from "@internationalized/date";
   import { ChevronDownIcon } from "@lucide/svelte";
   import { cn } from "$lib/utils";
-  import { i18n } from "$lib";
   import type { AnyFieldApi } from "@tanstack/svelte-form";
-  import { getFormat } from "$lib/hooks/format.svelte";
   import FieldContainer from "./field-container.svelte";
+  import { getFormat, getTranslations } from "@sveltebase/i18n";
 
   type DateTimeFieldProps = {
     label?: string;
@@ -36,8 +35,7 @@
     required = false
   }: DateTimeFieldProps = $props();
 
-  const { t } = $derived(i18n);
-
+  const t = getTranslations();
   const format = getFormat();
   let calendarOpen = $state(false);
 

@@ -3,12 +3,12 @@
   import type { AnyFieldApi } from "@tanstack/svelte-form";
   import { type ComponentProps } from "svelte";
   import type { InputGroupTextarea } from "../ui/input-group";
-  import { i18n } from "$lib";
   import { cn } from "$lib/utils";
   import FieldContainer from "./field-container.svelte";
   import { watch } from "runed";
-  import { createAsync } from "$lib/hooks/create-async.svelte";
   import { Spinner } from "../ui/spinner";
+  import { getTranslations } from "@sveltebase/i18n";
+  import { createAsync } from "@sveltebase/utils";
 
   type TextareaFieldProps = ComponentProps<typeof InputGroupTextarea> & {
     label?: string;
@@ -28,7 +28,7 @@
     ...props
   }: TextareaFieldProps = $props();
 
-  const { t } = $derived(i18n);
+  const t = getTranslations();
 
   // svelte-ignore state_referenced_locally
   let count = $state(field.state.value.length as number);

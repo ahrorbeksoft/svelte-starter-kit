@@ -18,8 +18,8 @@ const PAGES = {
  * SERVERS
  */
 const SERVERS = {
-  "POST /api/instant": `/api/instant`,
-  "POST /api/query": `/api/query`
+  "POST /api/instant/auth": `/api/instant/auth`,
+  "POST /api/instant/query": `/api/instant/query`
 }
 
 /**
@@ -142,7 +142,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 */
 export type KIT_ROUTES = {
   PAGES: { '/': never, '/demo': never, '/demo/form': never }
-  SERVERS: { 'POST /api/instant': never, 'POST /api/query': never }
+  SERVERS: { 'POST /api/instant/auth': never, 'POST /api/instant/query': never }
   ACTIONS: Record<string, never>
   LINKS: Record<string, never>
   Params: Record<string, never>

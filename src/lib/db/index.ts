@@ -1,4 +1,7 @@
-export { db } from "./db.ts";
-export { useQuery, prefetchQuery, queryOnce } from "./query.svelte.ts";
-export { auth } from "./auth.svelte.ts";
-export type { User } from "./types.ts";
+import { init } from "@instantdb/svelte";
+import { PUBLIC_INSTANT_APP_ID } from "$env/static/public";
+import schema from "../instant.schema";
+import { createInstantHelpers } from "@sveltebase/instant";
+
+export const db = init({ appId: PUBLIC_INSTANT_APP_ID, schema, devtool: false });
+export const { useQuery, prefetchQuery, auth } = createInstantHelpers(db);

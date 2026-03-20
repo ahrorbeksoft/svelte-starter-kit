@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { AnyFieldApi } from "@tanstack/svelte-form";
   import * as Select from "$lib/components/ui/select";
-  import { i18n } from "$lib";
   import { extract } from "runed";
   import { cn } from "$lib/utils";
   import FieldContainer from "./field-container.svelte";
+  import { getTranslations } from "@sveltebase/i18n";
 
   type BirthdayFieldProps = {
     label?: string;
@@ -18,7 +18,7 @@
   // 1. Safely extract value
   const fieldValue = $derived(extract(field.state.value, undefined) as Date | undefined);
   const isInvalid = $derived(field.state.meta.isTouched && field.state.meta.errors.length > 0);
-  const { t } = $derived(i18n);
+  const t = getTranslations();
 
   // 2. Internal state handles empty strings for "undefined" state
   // svelte-ignore state_referenced_locally

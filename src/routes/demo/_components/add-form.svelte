@@ -1,8 +1,8 @@
 <script lang="ts">
   import { AppForm, SubmitButton, TextField } from "$lib/components/form";
   import { auth, db } from "$lib/db";
-  import { timestamps, tryCatch } from "$lib/utils";
   import { id } from "@instantdb/svelte";
+  import { timestamps, tryCatch } from "@sveltebase/utils";
   import { createForm } from "@tanstack/svelte-form";
   import z from "zod";
 

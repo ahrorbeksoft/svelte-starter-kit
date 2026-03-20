@@ -12,7 +12,7 @@
   import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
   import { AlertDialogProvider } from "$lib/components/ui/alert-dialog/index.js";
   import { siteTitle } from "$lib/constants.js";
-  import { auth } from "$lib/db/auth.svelte.js";
+  import { auth } from "$lib/db";
 
   let { children, data } = $props();
 

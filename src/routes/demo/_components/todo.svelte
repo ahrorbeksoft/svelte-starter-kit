@@ -3,10 +3,10 @@
   import { Button } from "$lib/components/ui/button";
   import { Checkbox } from "$lib/components/ui/checkbox";
   import { db } from "$lib/db";
-  import { createAsync } from "$lib/hooks/create-async.svelte";
   import { TrashIcon } from "@lucide/svelte";
   import type { Todo } from "./query";
   import { Spinner } from "$lib/components/ui/spinner";
+  import { createAsync } from "@sveltebase/utils";
 
   const { todo }: { todo: Todo } = $props();
 

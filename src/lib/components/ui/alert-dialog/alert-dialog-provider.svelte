@@ -3,6 +3,7 @@
   import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
   import { buttonVariants } from "$lib/components/ui/button";
   import { cn } from "$lib/utils";
+  import { getTranslations } from "@sveltebase/i18n";
   import { setConfirm, type ConfirmParams } from "./alert-dialog-context.svelte";
 
   let { children } = $props();
@@ -14,7 +15,7 @@
   // Store the resolver function for the current promise
   let resolvePromise: ((value: boolean) => void) | null = null;
 
-  const { t } = $derived(i18n);
+  const t = getTranslations();
 
   function confirm(newParams: ConfirmParams): Promise<boolean> {
     return new Promise((resolve) => {

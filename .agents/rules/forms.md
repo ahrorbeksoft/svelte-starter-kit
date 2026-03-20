@@ -39,7 +39,7 @@ Use this as the default shape:
   import { tryCatch } from "$lib/utils";
   import { AppForm, SubmitButton, TextField } from "$lib/components/form";
 
-  const { t } = $derived(i18n);
+  const t = getTranslations()
 
   const schema = $derived(
     z.object({
@@ -379,7 +379,7 @@ Use this as the standard modal form structure and adapt it as needed.
 
   let { open = $bindable(), entity = $bindable() }: ModalProps = $props();
 
-  const { t } = $derived(i18n);
+  const t = getTranslations()
 
   const schema = $derived(
     z.object({
@@ -484,7 +484,7 @@ Pattern:
 
   let showForm = $state(false);
 
-  const { t } = $derived(i18n);
+  const t = getTranslations()
 
   const schema = $derived(
     z.object({

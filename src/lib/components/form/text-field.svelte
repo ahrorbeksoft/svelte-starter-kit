@@ -5,8 +5,8 @@
   import type { ComponentProps, Snippet } from "svelte";
   import FieldContainer from "./field-container.svelte";
   import { Spinner } from "../ui/spinner";
-  import { createAsync } from "$lib/hooks/create-async.svelte";
-  import { i18n } from "$lib";
+  import { getTranslations } from "@sveltebase/i18n";
+  import { createAsync } from "@sveltebase/utils";
 
   type TextFieldProps = ComponentProps<typeof InputGroup.Input> & {
     label?: string;
@@ -31,7 +31,7 @@
     ...props
   }: TextFieldProps = $props();
 
-  const { t } = $derived(i18n);
+  const t = getTranslations();
 
   const action = createAsync(async () => {
     const initialValue = await getInitialValueAsync?.();

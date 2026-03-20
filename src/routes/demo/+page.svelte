@@ -4,7 +4,7 @@
   import { Separator } from "$lib/components/ui/separator/index.js";
   import Spinner from "$lib/components/ui/spinner/spinner.svelte";
   import { auth, db, useQuery } from "$lib/db";
-  import { createAsync } from "$lib/hooks/create-async.svelte.js";
+  import { createAsync } from "@sveltebase/utils";
   import AddForm from "./_components/add-form.svelte";
   import Login from "./_components/login.svelte";
   import { todosQuery } from "./_components/query.js";

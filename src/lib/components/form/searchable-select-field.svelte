@@ -12,6 +12,7 @@
   import type { RenderSnippetConfig } from "../render.svelte";
   import Render from "../render.svelte";
   import FieldContainer from "./field-container.svelte";
+  import { getTranslations } from "@sveltebase/i18n";
 
   type Option<T> = {
     value: string;
@@ -49,7 +50,7 @@
     required = false
   }: ContainerProps<T> = $props();
   const isInvalid = $derived(field.state.meta.isTouched && !field.state.meta.isValid);
-  const { t } = $derived(i18n);
+  const t = getTranslations();
   const resolvedPlaceholder = $derived(placeholder ?? t("select-option"));
   const resolvedSearchText = $derived(searchText ?? t("search-options"));
   const resolvedNotFoundText = $derived(notFoundText ?? t("no-options-left"));

@@ -13,13 +13,15 @@
         class="flex items-center justify-center px-2.5 transition-all"
         {...props}
       >
-        <span class="md:hidden">
-          <i18n.currentLanguage.icon class="h-5 w-5" />
-        </span>
-        <span class="hidden items-center gap-2 md:flex">
-          <i18n.currentLanguage.icon class="h-5 w-5" />
-          {i18n.currentLanguage.label}
-        </span>
+        {#key i18n.locale}
+          <span class="md:hidden">
+            <i18n.currentLanguage.icon class="h-5 w-5" />
+          </span>
+          <span class="hidden items-center gap-2 md:flex">
+            <i18n.currentLanguage.icon class="h-5 w-5" />
+            {i18n.currentLanguage.label}
+          </span>
+        {/key}
       </Button>
     {/snippet}
   </DropdownMenu.Trigger>

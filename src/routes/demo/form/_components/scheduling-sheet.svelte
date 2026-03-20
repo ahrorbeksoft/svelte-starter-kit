@@ -16,7 +16,7 @@
     TimeField
   } from "$lib/components/form";
   import { Button } from "$lib/components/ui/button";
-  import { tryCatch, wait } from "$lib/utils";
+  import { tryCatch, wait } from "@sveltebase/utils";
 
   let { open = $bindable(false) }: { open: boolean } = $props();
 

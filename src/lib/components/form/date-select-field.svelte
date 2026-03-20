@@ -8,8 +8,8 @@
   import { cn } from "$lib/utils";
   import { ChevronDownIcon } from "@lucide/svelte";
   import { addYears } from "date-fns";
-  import { getFormat, type FormatOptions } from "$lib/hooks/format.svelte";
   import FieldContainer from "./field-container.svelte";
+  import { getFormat, getTranslations, type FormatOptions } from "@sveltebase/i18n";
 
   type DateSelectFieldProps = {
     label?: string;
@@ -41,7 +41,7 @@
   }: DateSelectFieldProps = $props();
 
   const format = getFormat();
-  const { t } = $derived(i18n);
+  const t = getTranslations();
   const resolvedPlaceholder = $derived(placeholder ?? t("select-date"));
 
   const isInvalid = $derived(field.state.meta.isTouched && field.state.meta.errors.length > 0);

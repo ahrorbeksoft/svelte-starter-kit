@@ -1,6 +1,4 @@
 import { languages } from "./constants";
-import { Translator } from "./core/translator.svelte";
+import { createI18n } from "@sveltebase/i18n";
 
-export const i18n = new Translator(languages, "uz");
-
-export { State, PersistentState } from "./core/state.svelte";
+export const i18n = createI18n(languages, "locale");

@@ -1,5 +1,5 @@
+import { prefetchQuery } from "$lib/db";
 import type { PageLoad } from "./$types";
-import { prefetchQuery } from "$lib/db/query.svelte.js";
 import { todosQuery } from "./_components/query.js";
 
 export const load: PageLoad = async ({ fetch, parent }) => {

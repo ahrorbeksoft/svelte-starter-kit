@@ -54,15 +54,15 @@
 </script>
 
 <script lang="ts" generics="T">
-  import { i18n } from "$lib";
   import { getConfirm } from "$lib/components/ui/alert-dialog";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { EllipsisIcon } from "@lucide/svelte";
 
   import { buttonVariants } from "./ui/button";
   import { cn } from "$lib/utils";
+  import { getTranslations } from "@sveltebase/i18n";
   const confirm = getConfirm();
-  const { t } = $derived(i18n);
+  const t = getTranslations();
 
   const {
     trigger,

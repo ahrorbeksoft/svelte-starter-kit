@@ -15,7 +15,7 @@
     TextField
   } from "$lib/components/form";
   import { Button } from "$lib/components/ui/button";
-  import { tryCatch, wait } from "$lib/utils";
+  import { tryCatch, wait } from "@sveltebase/utils";
 
   const departmentOptions = [
     { value: "sales", label: "Sales" },
