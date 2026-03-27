@@ -1,12 +1,8 @@
-import type { User } from "@instantdb/svelte";
-import {} from "@sveltebase/instant";
+import type { User } from "$lib/db/index.js";
+import { parseUser } from "@sveltebase/instant";
 export const load = async ({ cookies }) => {
-  let user: undefined | User;
+  const all_cookies = cookies.getAll();
+  const user = parseUser<User>(all_cookies);
 
-  const raw_user = cookies.get("instant_user");
-  if (raw_user) {
-    user = JSON.parse(raw_user) as User;
-  }
-
-  return { cookies: cookies.getAll(), user };
+  return { cookies: all_cookies, user };
 };

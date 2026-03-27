@@ -1,4 +1,18 @@
 {
+  "just-now": "Just now",
+  "minutes-ago": "{minutes, plural, =1 {# minute} other {# minutes}} ago",
+  "hours-ago": "{hours, plural, =1 {# hour} other {# hours}} ago",
+  "days-ago": "{days, plural, =1 {# day} other {# days}} ago",
+  "weeks-ago": "{weeks, plural, =1 {# week} other {# weeks}} ago",
+  "months-ago": "{months, plural, =1 {# month} other {# months}} ago",
+  "years-ago": "{years, plural, =1 {# year} other {# years}} ago",
+  "in-minutes": "in {minutes, plural, =1 {# minute} other {# minutes}}",
+  "in-hours": "in {hours, plural, =1 {# hour} other {# hours}}",
+  "in-days": "in {days, plural, =1 {# day} other {# days}}",
+  "in-weeks": "in {weeks, plural, =1 {# week} other {# weeks}}",
+  "in-months": "in {months, plural, =1 {# month} other {# months}}",
+  "in-years": "in {years, plural, =1 {# year} other {# years}}",
+
   "loading-dot": "Loading...",
   "render-month": "{month, select, 1 {January} 2 {February} 3 {March} 4 {April} 5 {May} 6 {June} 7 {July} 8 {August} 9 {September} 10 {October} 11 {November} 12 {December} other {Unknown}}",
   "day": "Day",
@@ -15,8 +29,6 @@
   "textarea-counter": "{count}/{max} characters",
   "cancel": "Cancel",
   "confirm": "Confirm",
-  "just-now": "Just now",
-  "minutes-ago": "{minutes, plural, =1 {# minute} other {# minutes}} ago",
   "today-at": "Today at {time}",
   "yesterday-at": "Yesterday at {time}",
   "input": {

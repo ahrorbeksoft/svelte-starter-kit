@@ -18,10 +18,8 @@
 
   const isMobile = new IsMobile();
 
-  // svelte-ignore state_referenced_locally
-  i18n.init(data.cookies);
-  // svelte-ignore state_referenced_locally
-  auth.init(data.user);
+  i18n.init(() => data.cookies);
+  auth.init(() => data.user);
 
   const queryClient = new QueryClient({
     defaultOptions: {
